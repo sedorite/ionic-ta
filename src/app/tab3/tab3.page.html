@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Profile
+    </ion-title>
+    <ion-button (click)="logout()" slot="end" fill="clear" color="light">
+      <ion-icon slot="icon-only" name="exit"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="avatar">
+    <img src="{{image? image : 'assets/images/user.png'}}" alt="" (click)="Camera()">
+  </div>
+  <ion-card>
+      <ion-item>
+          <ion-label position="floating">NIK</ion-label>
+          <ion-input [(ngModel)]="nik" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Nama</ion-label>
+          <ion-input [(ngModel)]="nama"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Telepon</ion-label>
+          <ion-input [(ngModel)]="telp"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-radio-group>
+        <ion-item>
+          <ion-label>Laki-Laki</ion-label>
+          <ion-radio slot="start" [checked]="jk==1 ? true : false" value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Perempuan</ion-label>
+          <ion-radio slot="start" [checked]="jk==0 ? true : false" value="0"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <ion-button color="primary" expand="block" (click)="update()">UPDATE</ion-button>
+  </ion-card>
+</ion-content>
+

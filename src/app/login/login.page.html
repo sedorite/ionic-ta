@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-card class="ion-no-margin">
+      <ion-card-header>
+        <ion-card-title>LOGIN</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item class="ion-no-padding">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-button (click)="login()" expand="block" color="primary">
+          Masuk
+        </ion-button>
+      </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "qr",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
