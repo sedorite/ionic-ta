@@ -15,7 +15,7 @@ export class Tab3Page {
 
   profile :any
   nik: any
-  nama: any
+  name: any
   telp: any
   email: any
   jk: any
@@ -34,7 +34,7 @@ export class Tab3Page {
   loadProfile(){
     this.profile = JSON.parse(localStorage.getItem("profile"))
     this.nik = this.profile.nik
-    this.nama = this.profile.nama
+    this.name = this.profile.name
     this.telp = this.profile.telp
     this.email = this.profile.email
     this.jk = this.profile.jk.toString()
@@ -96,7 +96,7 @@ export class Tab3Page {
 
     let frmProfile = new FormData();
     frmProfile.append('nik', this.nik)
-    frmProfile.append('nama', this.nama);
+    frmProfile.append('name', this.name);
     frmProfile.append('telp', this.telp);
     frmProfile.append('email', this.email);
     frmProfile.append('jk', this.jk);

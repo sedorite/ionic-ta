@@ -20,7 +20,7 @@
       </ion-item>
       <ion-item>
           <ion-label position="floating">Nama</ion-label>
-          <ion-input [(ngModel)]="nama"></ion-input>
+          <ion-input [(ngModel)]="name"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label position="floating">Telepon</ion-label>
@@ -30,16 +30,21 @@
         <ion-label position="floating">Email</ion-label>
         <ion-input [(ngModel)]="email"></ion-input>
       </ion-item>
-      <ion-radio-group>
-        <ion-item>
-          <ion-label>Laki-Laki</ion-label>
-          <ion-radio slot="start" [checked]="jk==1 ? true : false" value="1"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Perempuan</ion-label>
-          <ion-radio slot="start" [checked]="jk==0 ? true : false" value="0"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
+      <ion-list>
+        <ion-radio-group value="{{jk}}">
+          <ion-list-header>
+            <ion-label>Jenis Kelamin</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Perempuan</ion-label>
+            <ion-radio slot="start" value="0"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Laki-Laki</ion-label>
+            <ion-radio slot="start" value="1"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
       <ion-button color="primary" expand="block" (click)="update()">UPDATE</ion-button>
   </ion-card>
 </ion-content>

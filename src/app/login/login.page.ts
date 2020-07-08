@@ -19,11 +19,14 @@ export class LoginPage implements OnInit {
     public route : Router,
     public gb : GlobalService
   ) { 
-    if(localStorage.getItem("profile")){
-      this.route.navigateByUrl("tabs/tab1")
-    }
+    
   }
 
+  ionViewDidEnter(){
+    if(localStorage.getItem("profile")){
+      this.route.navigate(['/tabs/tab1'])
+    }
+  }
 
   ngOnInit() {
   }
@@ -47,11 +50,8 @@ export class LoginPage implements OnInit {
       this.gb.loadingDismiss()
 
       if(res.status==1){
-
         this.gb.pesan(res.mess,"success")
-
         localStorage.setItem("profile",JSON.stringify(res.data))
-        
         this.route.navigateByUrl("tabs/tab1")
       }else{
         this.gb.pesan(res.mess,"danger")
