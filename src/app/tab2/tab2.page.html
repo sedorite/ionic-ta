@@ -9,13 +9,12 @@
 <ion-content>
   <ion-card class="ion-no-margin" lines="none" style="box-shadow: none;">
     <ion-list>
-      <ion-item *ngFor="history">
+      <ion-item *ngFor="let h of history">
         <ion-label>
-          <b>Senin</b>
-          <p>Tanggal    : 17/05/2020</p>
-          <p>Jam Masuk  : 08.00 WIB</p>
-          <p>Jam Keluar : 16.00 WIB</p>
-          <p>Keterangan : tidak ijin / ijin</p>
+          <b>Tanggal    : {{h.tgl}}</b>
+          <p>Jam Masuk  : {{h.waktu_masuk}}</p>
+          <p>Jam Keluar : {{h.waktu_keluar}}</p>
+          <p>Keterangan : {{h.status}}</p>
         </ion-label>
       </ion-item>
     </ion-list>

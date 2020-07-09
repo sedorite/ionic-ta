@@ -8,8 +8,9 @@ export class GlobalService {
 
   public loader : HTMLIonLoadingElement
   isLoading : any
-
-  server = "http://localhost:8000/api/"
+  alamat = "http://dika.sekiver.com"
+  image = this.alamat+"/uploads"
+  server = this.alamat+"/api/"
   constructor(
     public loading : LoadingController,
     public toas: ToastController

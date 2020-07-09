@@ -38,7 +38,7 @@ export class Tab3Page {
     this.telp = this.profile.telp
     this.email = this.profile.email
     this.jk = this.profile.jk.toString()
-    this.image = this.profile.foto
+    this.image = this.gb.image+"/"+this.profile.foto
   }
   async Camera(){
     const actionsheet = await this.acsheet.create({
@@ -100,11 +100,13 @@ export class Tab3Page {
     frmProfile.append('telp', this.telp);
     frmProfile.append('email', this.email);
     frmProfile.append('jk', this.jk);
-    frmProfile.append('image', this.image);
+    frmProfile.append('id', this.profile.id);
 
+    frmProfile.append('image', this.image);
+    console.log("pic", this.image)
     this.http.post(this.gb.server+"updateprofile", frmProfile, opt)
     .subscribe((res : any) => {
-
+      console.log("sukses update", res)
       this.gb.loadingDismiss()
       console.log(res)
       if(res.status==1){
@@ -118,7 +120,7 @@ export class Tab3Page {
     ,(err:any) => {
       this.gb.loadingDismiss()
       this.gb.pesan("Terjadi Kesalahan","danger")
-      console.log(err)
+      console.log("error", err)
     }
     );
   }
